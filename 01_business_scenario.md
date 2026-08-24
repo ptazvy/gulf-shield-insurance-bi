@@ -48,4 +48,3 @@ Gulf Shield Insurance is a fictional mid-size composite insurer headquartered in
 4. What is our customer retention rate, and which segments are most likely to churn or cross-sell?
 5. How much premium revenue is outstanding vs. collected, by branch and product?
 
-*(This scenario framing — problem statement, stakeholder table, and business questions — is exactly the kind of "requirements gathering" artifact called out in the job post; keep it in the repo as evidence of that skill, not just the technical build.)*
