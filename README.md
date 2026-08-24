@@ -27,8 +27,8 @@ This repo was built stage-by-stage to practice, in order, every core competency 
 ## Project roadmap
 
 - [x] **Stage 1 — Scoping & Data Model**: business scenario + star schema design
-- [ ] **Stage 2 — Synthetic Dataset**: realistic CSV source data
-- [ ] **Stage 3 — SQL Data Warehouse**: DDL + load scripts + practice queries
+- [x] **Stage 2 — Synthetic Dataset**: realistic CSV source data (9,000 policies, 1,772 claims, 16,385 payments, 3,000 customers)
+- [x] **Stage 3 — SQL Data Warehouse**: DDL + load scripts + 15 practice queries (joins, CTEs, window functions)
 - [ ] **Stage 4 — ETL Pipeline**: extract/validate/transform/load workflow
 - [ ] **Stage 5 — Power BI Data Model**: star schema import + DAX measures
 - [ ] **Stage 6 — Power BI Dashboards**: Executive / Claims Ops / Customer Analytics
@@ -42,13 +42,20 @@ insurance-bi-portfolio/
 ├── README.md
 ├── docs/
 │   ├── 01_business_scenario.md
-│   └── 02_data_model.md
-├── data/              (added Stage 2)
-├── sql/               (added Stage 3)
+│   ├── 02_data_model.md
+│   └── 03_data_dictionary.md
+├── data/              # Stage 2: generator script + CSV source files
+│   ├── generate_data.py
+│   └── *.csv
+├── sql/               # Stage 3: DDL, warehouse loader, practice queries
+│   ├── schema.sql
+│   ├── load_warehouse.py
+│   ├── practice_queries.sql
+│   └── README.md
 ├── etl/               (added Stage 4)
 └── powerbi/           (added Stage 5-6)
 ```
 
 ## How to use this repo (for recruiters/reviewers)
 
-Start with `docs/01_business_scenario.md` for the "why", then `docs/02_data_model.md` for the data architecture, then follow the numbered folders in order — the project is designed to read like a real BI delivery, from requirements to published dashboard.
+Start with `docs/01_business_scenario.md` for the "why", then `docs/02_data_model.md` for the data architecture, `docs/03_data_dictionary.md` for the dataset itself, then `sql/README.md` for the warehouse and query set, then follow the numbered folders in order — the project is designed to read like a real BI delivery, from requirements to published dashboard.
