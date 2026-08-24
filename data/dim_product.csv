@@ -1,0 +1,10 @@
+product_key,product_line,product_name,coverage_type
+1,Motor,Motor Comprehensive,Comprehensive
+2,Motor,Motor Third-Party,Third-Party Liability
+3,Health,Health Individual,Individual
+4,Health,Health Family,Family
+5,Health,Health Corporate,Group
+6,Property,Property Fire & Perils,Fire & Allied Perils
+7,Property,Property All Risks,All Risks
+8,Life,Life Term,Term Life
+9,Life,Life Whole,Whole Life

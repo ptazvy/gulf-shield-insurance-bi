@@ -1,0 +1,7 @@
+claim_status_key,status_name,status_group
+1,New,Open
+2,In Review,Open
+3,Approved,Open
+4,Paid,Closed
+5,Rejected,Closed
+6,Closed,Closed

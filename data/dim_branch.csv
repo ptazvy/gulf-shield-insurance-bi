@@ -1,0 +1,6 @@
+branch_key,branch_id,branch_name,region,city
+1,BR01,Riyadh Main,Central,Riyadh
+2,BR02,Jeddah Corniche,Western,Jeddah
+3,BR03,Dammam Business Bay,Eastern,Dammam
+4,BR04,Makkah Central,Western,Makkah
+5,BR05,Madinah Gate,Western,Madinah
