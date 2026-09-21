@@ -1,0 +1,10 @@
+table,rows_extracted,rows_loaded,rows_rejected
+dim_date,1697,1697,0
+dim_branch,5,5,0
+dim_product,9,9,0
+dim_agent,40,40,0
+dim_customer,3004,3000,4
+dim_claim_status,6,6,0
+fact_policy,9005,8989,16
+fact_claims,1772,1760,12
+fact_premium_payments,16385,16362,23

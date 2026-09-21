@@ -1,0 +1,17 @@
+policy_key,policy_id,policy_date_key,customer_key,product_key,agent_key,branch_key,policy_type,sum_insured,gross_written_premium,policy_start_date,policy_end_date,is_renewal,is_cancelled,reject_reason
+1972,POL001972,20241030,999999,8,2,3,New Business,131792.43,13695.47,2024-10-30,2025-10-30,False,False,orphaned customer_key
+2138,POL002138,20240923,1329,3,26,1,Renewal,171259.93,-9889.51,2024-09-23,2025-09-23,True,False,negative gross_written_premium
+2286,POL002286,20260619,273,1,27,1,Renewal,133365.79,-7505.2,2026-06-19,2027-06-19,True,False,negative gross_written_premium
+3794,POL003794,20230710,999999,1,1,1,New Business,87317.89,6134.99,2023-07-10,2024-07-09,False,False,orphaned customer_key
+3865,POL003865,20230223,999999,6,33,2,New Business,515266.15,28733.89,2023-02-23,2024-02-23,False,False,orphaned customer_key
+4536,POL004536,20260112,999999,1,37,3,Renewal,67129.26,3726.51,2026-01-12,2027-01-12,True,False,orphaned customer_key
+4650,POL004650,20260516,99,6,4,5,Cancellation,522771.27,-7014.42,2026-05-16,2027-05-16,False,True,negative gross_written_premium
+5843,POL005843,20260705,315,8,28,4,Renewal,32432.1,-3302.63,2026-07-05,2027-07-05,True,False,negative gross_written_premium
+7581,POL007581,20260217,1410,8,30,3,Renewal,65298.07,-3373.0,2026-02-17,2027-02-17,True,False,negative gross_written_premium
+8177,POL008177,20231209,74,9,7,5,Renewal,71970.95,-4530.57,2023-12-09,2024-12-08,True,False,negative gross_written_premium
+8546,POL008546,20230707,999999,9,37,3,New Business,125626.76,13486.35,2023-07-07,2024-07-06,False,False,orphaned customer_key
+2427,POL002427,20250223,2902,6,4,5,Renewal,129982.27,15139.83,2025-02-23,2026-02-23,True,False,duplicate policy_id
+6326,POL006326,20231020,2331,2,38,1,New Business,13658.47,1108.93,2023-10-20,2024-10-19,False,False,duplicate policy_id
+7642,POL007642,20250325,884,8,23,3,Renewal,197556.57,12325.28,2025-03-25,2026-03-25,True,False,duplicate policy_id
+7856,POL007856,20240214,1287,1,9,5,Renewal,33572.55,1798.21,2024-02-14,2025-02-13,True,False,duplicate policy_id
+3803,POL003803,20250917,2354,2,20,4,New Business,11539.58,828.69,2025-09-17,2026-09-17,False,False,duplicate policy_id

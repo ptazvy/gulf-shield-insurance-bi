@@ -1,0 +1,60 @@
+03:55:30 | INFO | ETL PIPELINE RUN STARTED — 2026-08-25T03:55:30
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | STAGE: EXTRACT
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | [EXTRACT] dim_date: 1,697 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/dim_date.csv
+03:55:30 | INFO | [EXTRACT] dim_branch: 5 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/dim_branch.csv
+03:55:30 | INFO | [EXTRACT] dim_product: 9 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/dim_product.csv
+03:55:30 | INFO | [EXTRACT] dim_agent: 40 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/dim_agent.csv
+03:55:30 | INFO | [EXTRACT] dim_customer: 3,004 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/dim_customer.csv
+03:55:30 | INFO | [EXTRACT] dim_claim_status: 6 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/dim_claim_status.csv
+03:55:30 | INFO | [EXTRACT] fact_policy: 9,005 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/fact_policy.csv
+03:55:30 | INFO | [EXTRACT] fact_claims: 1,772 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/fact_claims.csv
+03:55:30 | INFO | [EXTRACT] fact_premium_payments: 16,385 rows read from /mnt/user-data/outputs/insurance-bi-portfolio/etl/raw_extracts/fact_premium_payments.csv
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | STAGE: VALIDATE
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | [VALIDATE] dim_customer: 3000 passed, 4 rejected (duplicate customer_id)
+03:55:30 | INFO | [VALIDATE] dim_customer: 4 row(s) quarantined -> /mnt/user-data/outputs/insurance-bi-portfolio/etl/quarantine/dim_customer_rejects.csv
+03:55:30 | INFO | [VALIDATE] fact_policy: 8989 passed, 16 rejected
+03:55:30 | INFO | [VALIDATE] fact_policy: 16 row(s) quarantined -> /mnt/user-data/outputs/insurance-bi-portfolio/etl/quarantine/fact_policy_rejects.csv
+03:55:30 | INFO | [VALIDATE] fact_claims: 1760 passed, 12 rejected
+03:55:30 | INFO | [VALIDATE] fact_claims: 12 row(s) quarantined -> /mnt/user-data/outputs/insurance-bi-portfolio/etl/quarantine/fact_claims_rejects.csv
+03:55:30 | INFO | [VALIDATE] fact_premium_payments: WARNING: 5 row(s) have a blank payment_method — will be defaulted in TRANSFORM, not rejected
+03:55:30 | INFO | [VALIDATE] fact_premium_payments: 16362 passed, 23 rejected
+03:55:30 | INFO | [VALIDATE] fact_premium_payments: 23 row(s) quarantined -> /mnt/user-data/outputs/insurance-bi-portfolio/etl/quarantine/fact_premium_payments_rejects.csv
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | STAGE: TRANSFORM
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | [TRANSFORM] dim_customer: standardized name/city casing; filled gender/age_band nulls with 'Not Applicable'
+03:55:30 | INFO | [TRANSFORM] fact_premium_payments: defaulted 5 blank payment_method value(s) to 'Unknown'
+03:55:30 | INFO | [TRANSFORM] fact_claims: derived claim_severity_band from claim_amount_paid
+03:55:30 | INFO | [TRANSFORM] fact_policy: derived is_short_rated flag from is_cancelled
+03:55:30 | INFO | [TRANSFORM] all fact tables: stamped etl_load_timestamp and source_system for data lineage
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | STAGE: LOAD
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | [LOAD] dim_date: 1,697 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] dim_branch: 5 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] dim_product: 9 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] dim_agent: 40 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] dim_customer: 3,000 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] dim_claim_status: 6 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] fact_policy: 8,989 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] fact_claims: 1,760 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | [LOAD] fact_premium_payments: 16,362 rows loaded into gulf_shield_etl.db
+03:55:30 | INFO | Load complete. Warehouse: /mnt/user-data/outputs/insurance-bi-portfolio/etl/gulf_shield_etl.db
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO | PIPELINE SUMMARY
+03:55:30 | INFO | ======================================================================
+03:55:30 | INFO |   dim_date                   extracted=  1697 loaded=  1697  rejected=   0
+03:55:30 | INFO |   dim_branch                 extracted=     5 loaded=     5  rejected=   0
+03:55:30 | INFO |   dim_product                extracted=     9 loaded=     9  rejected=   0
+03:55:30 | INFO |   dim_agent                  extracted=    40 loaded=    40  rejected=   0
+03:55:30 | INFO |   dim_customer               extracted=  3004 loaded=  3000  rejected=   4
+03:55:30 | INFO |   dim_claim_status           extracted=     6 loaded=     6  rejected=   0
+03:55:30 | INFO |   fact_policy                extracted=  9005 loaded=  8989  rejected=  16
+03:55:30 | INFO |   fact_claims                extracted=  1772 loaded=  1760  rejected=  12
+03:55:30 | INFO |   fact_premium_payments      extracted= 16385 loaded= 16362  rejected=  23
+03:55:30 | INFO | Summary written to /mnt/user-data/outputs/insurance-bi-portfolio/etl/logs/etl_summary_20260825_035530.csv
+03:55:30 | INFO | ETL PIPELINE RUN COMPLETE — duration: 0.6s

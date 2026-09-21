@@ -1,0 +1,5 @@
+customer_key,customer_id,customer_name,segment,gender,age_band,nationality,city,customer_since_date,reject_reason
+16,CUST00016,"Garcia, Powell and Morgan",SME,,,Saudi,Abha,2025-06-13,duplicate customer_id
+764,CUST00764,Wagner-Reid,SME,,,Saudi,Makkah,2019-01-27,duplicate customer_id
+911,CUST00911,Timothy Rodriguez,Individual,Female,36-45,Saudi,Makkah,2024-10-20,duplicate customer_id
+183,CUST00183,Bright-Francis,SME,,,Saudi,Taif,2021-10-02,duplicate customer_id

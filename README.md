@@ -29,8 +29,8 @@ This repo was built stage-by-stage to practice, in order, every core competency 
 - [x] **Stage 1 — Scoping & Data Model**: business scenario + star schema design
 - [x] **Stage 2 — Synthetic Dataset**: realistic CSV source data (9,000 policies, 1,772 claims, 16,385 payments, 3,000 customers)
 - [x] **Stage 3 — SQL Data Warehouse**: DDL + load scripts + 15 practice queries (joins, CTEs, window functions)
-- [ ] **Stage 4 — ETL Pipeline**: extract/validate/transform/load workflow
-- [ ] **Stage 5 — Power BI Data Model**: star schema import + DAX measures
+- [x] **Stage 4 — ETL Pipeline**: extract/validate/transform/load workflow with logging, quarantine, and data lineage
+- [x] **Stage 5 — Power BI Data Model**: star schema import + full DAX measure library
 - [ ] **Stage 6 — Power BI Dashboards**: Executive / Claims Ops / Customer Analytics
 - [ ] **Stage 7 — Automation**: scheduled refresh + alert logic
 - [ ] **Stage 8 — Documentation & Publishing**: data dictionary, lineage, case study
@@ -52,10 +52,19 @@ insurance-bi-portfolio/
 │   ├── load_warehouse.py
 │   ├── practice_queries.sql
 │   └── README.md
-├── etl/               (added Stage 4)
-└── powerbi/           (added Stage 5-6)
+├── etl/               # Stage 4: E-V-T-L pipeline with logging, quarantine, lineage
+│   ├── generate_raw_extracts.py
+│   ├── etl_pipeline.py
+│   ├── raw_extracts/
+│   ├── quarantine/
+│   ├── logs/
+│   └── README.md
+└── powerbi/           # Stage 5-6: data model setup, DAX measures, dashboards
+    ├── 01_data_model_setup.md
+    ├── dax_measures.md
+    └── README.md
 ```
 
 ## How to use this repo (for recruiters/reviewers)
 
-Start with `docs/01_business_scenario.md` for the "why", then `docs/02_data_model.md` for the data architecture, `docs/03_data_dictionary.md` for the dataset itself, then `sql/README.md` for the warehouse and query set, then follow the numbered folders in order — the project is designed to read like a real BI delivery, from requirements to published dashboard.
+Start with `docs/01_business_scenario.md` for the "why", then `docs/02_data_model.md` for the data architecture, `docs/03_data_dictionary.md` for the dataset itself, then `sql/README.md` and `etl/README.md` for the warehouse and pipeline, then `powerbi/README.md` for the dashboard layer — the project is designed to read like a real BI delivery, from requirements to published dashboard.

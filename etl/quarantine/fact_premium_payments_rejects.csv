@@ -1,0 +1,24 @@
+payment_key,payment_id,payment_date_key,policy_key,payment_amount,payment_method,reject_reason
+955,PAY000955,20241018,527,0.0,Cash,zero or negative payment_amount
+1367,PAY001367,20250509,755,0.0,Credit Card,zero or negative payment_amount
+1863,PAY001863,20260328,1051,0.0,SADAD,zero or negative payment_amount
+2522,PAY002522,20241020,1403,0.0,Cash,zero or negative payment_amount
+3574,PAY003574,20241030,1972,245.55,Credit Card,orphaned policy_key
+3575,PAY003575,20241130,1972,13449.92,Cash,orphaned policy_key
+3884,PAY003884,20240924,2138,9889.51,SADAD,orphaned policy_key
+4141,PAY004141,20260624,2286,7505.2,SADAD,orphaned policy_key
+6863,PAY006863,20230713,3794,6134.99,Cash,orphaned policy_key
+6996,PAY006996,20230226,3865,15443.28,Credit Card,orphaned policy_key
+6997,PAY006997,20230329,3865,13290.61,SADAD,orphaned policy_key
+8217,PAY008217,20260114,4536,248.54,SADAD,orphaned policy_key
+8218,PAY008218,20260215,4536,40.98,Credit Card,orphaned policy_key
+8219,PAY008219,20260315,4536,1672.23,Cash,orphaned policy_key
+8220,PAY008220,20260414,4536,1764.76,Credit Card,orphaned policy_key
+8422,PAY008422,20260520,4650,7014.42,Bank Transfer,orphaned policy_key
+10221,PAY010221,20240311,5642,0.0,Cash,zero or negative payment_amount
+10598,PAY010598,20260709,5843,455.95,Cash,orphaned policy_key
+10599,PAY010599,20260808,5843,209.5,Credit Card,orphaned policy_key
+13831,PAY013831,20260219,7581,3373.0,Credit Card,orphaned policy_key
+14938,PAY014938,20231209,8177,4530.57,SADAD,orphaned policy_key
+15595,PAY015595,20230711,8546,13486.35,SADAD,orphaned policy_key
+15835,PAY015835,20230404,8684,0.0,Bank Transfer,zero or negative payment_amount

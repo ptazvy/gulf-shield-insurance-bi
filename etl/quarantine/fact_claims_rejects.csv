@@ -1,0 +1,13 @@
+claim_key,claim_id,claim_date_key,policy_key,customer_key,product_key,branch_key,claim_status_key,claim_amount_reserved,claim_amount_paid,days_to_settle,reject_reason
+37,CLM000037,20241201,888888,2215,6,4,3,12769.71,3776.16,,orphaned policy_key
+132,CLM000132,20220804,888888,419,1,1,5,15318.29,0.0,111.0,orphaned policy_key
+372,CLM000372,20251130,1894,883,4,3,1,62704.09,-15699.83,,negative claim_amount_paid
+407,CLM000407,20250105,2062,410,3,2,5,2701.86,8105.58,35.0,claim_amount_paid grossly exceeds claim_amount_reserved
+449,CLM000449,20230707,888888,2493,1,4,4,1426.66,1339.48,74.0,orphaned policy_key
+458,CLM000458,20260808,2286,273,1,1,5,20790.13,0.0,111.0,orphaned policy_key
+753,CLM000753,20230722,3794,2471,1,1,6,10834.66,10042.43,118.0,orphaned policy_key
+823,CLM000823,20250317,4167,2141,1,1,4,51800.17,155400.51,27.0,claim_amount_paid grossly exceeds claim_amount_reserved
+940,CLM000940,20260531,4807,2386,1,5,2,3182.53,9547.59,,claim_amount_paid grossly exceeds claim_amount_reserved
+968,CLM000968,20250322,5009,2563,1,4,4,26575.93,79727.79000000001,66.0,claim_amount_paid grossly exceeds claim_amount_reserved
+1483,CLM001483,20240823,7462,1687,5,3,2,297573.67,-49730.3,,negative claim_amount_paid
+1503,CLM001503,20260525,888888,2877,1,1,6,8884.99,8359.88,32.0,orphaned policy_key
