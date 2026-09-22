@@ -13,6 +13,7 @@ This repo was built stage-by-stage to practice, in order, every core competency 
 - Advanced SQL
 - Data governance & documentation
 - Stakeholder-style requirements gathering
+- Report automation & pipeline monitoring
 
 ## Tech stack
 
@@ -22,6 +23,7 @@ This repo was built stage-by-stage to practice, in order, every core competency 
 | Data warehouse | SQLite (portable stand-in for SQL Server / Synapse) |
 | ETL | Python (pandas-based pipeline simulating Alteryx/SSIS logic) |
 | Visualization | Power BI Desktop |
+| Automation | Python + Power BI Service scheduled refresh |
 | Version control | Git / GitHub |
 
 ## Project roadmap
@@ -31,11 +33,13 @@ This repo was built stage-by-stage to practice, in order, every core competency 
 - [x] **Stage 3 — SQL Data Warehouse**: DDL + load scripts + 15 practice queries (joins, CTEs, window functions)
 - [x] **Stage 4 — ETL Pipeline**: extract/validate/transform/load workflow with logging, quarantine, and data lineage
 - [x] **Stage 5 — Power BI Data Model**: star schema import + full DAX measure library
-- [x] **Stage 6 — Power BI Dashboards**: Executive / Claims Ops / Customer Analytics — design blueprint + visualization standards (hands-on Power BI build still pending)
+- [x] **Stage 6 — Power BI Dashboards**: Executive / Claims Ops / Customer Analytics — design blueprint + visualization standards
 - [x] **Stage 7 — Automation**: scheduled refresh + alert setup guide, plus a tested Python KPI alert script
-- [ ] **Stage 8 — Documentation & Publishing**: data dictionary, lineage, case study
+- [x] **Stage 8 — Documentation & Publishing**: data lineage doc, GitHub polishing checklist, LinkedIn case study draft
 
-## Repo structure (grows each stage)
+All eight stages are documented and design-complete. The one remaining piece is the hands-on build: constructing the actual Power BI model and dashboards in Power BI Desktop by following the guides in `powerbi/`, then exporting the finished `.pbix` and dashboard screenshots into this repo (see `docs/05_publishing_and_linkedin.md` for the pre-publish checklist).
+
+## Repo structure
 
 ```
 insurance-bi-portfolio/
@@ -43,29 +47,31 @@ insurance-bi-portfolio/
 ├── docs/
 │   ├── 01_business_scenario.md
 │   ├── 02_data_model.md
-│   └── 03_data_dictionary.md
-├── data/              # Stage 2: generator script + CSV source files
+│   ├── 03_data_dictionary.md
+│   ├── 04_data_lineage.md
+│   └── 05_publishing_and_linkedin.md
+├── data/               # Stage 2: generator script + CSV source files
 │   ├── generate_data.py
 │   └── *.csv
-├── sql/               # Stage 3: DDL, warehouse loader, practice queries
+├── sql/                # Stage 3: DDL, warehouse loader, practice queries
 │   ├── schema.sql
 │   ├── load_warehouse.py
 │   ├── practice_queries.sql
 │   └── README.md
-├── etl/               # Stage 4: E-V-T-L pipeline with logging, quarantine, lineage
+├── etl/                # Stage 4: E-V-T-L pipeline with logging, quarantine, lineage
 │   ├── generate_raw_extracts.py
 │   ├── etl_pipeline.py
 │   ├── raw_extracts/
 │   ├── quarantine/
 │   ├── logs/
 │   └── README.md
-├── powerbi/           # Stage 5-6: data model setup, DAX measures, dashboards
+├── powerbi/             # Stage 5-6: data model setup, DAX measures, dashboard design
 │   ├── 01_data_model_setup.md
 │   ├── 02_dashboard_design.md
 │   ├── 03_visualization_standards.md
 │   ├── dax_measures.md
 │   └── README.md
-└── automation/        # Stage 7: scheduled refresh + KPI alert script
+└── automation/           # Stage 7: scheduled refresh + KPI alert script
     ├── scheduled_refresh_setup.md
     ├── kpi_alert_check.py
     └── README.md
@@ -73,4 +79,38 @@ insurance-bi-portfolio/
 
 ## How to use this repo (for recruiters/reviewers)
 
-Start with `docs/01_business_scenario.md` for the "why", then `docs/02_data_model.md` for the data architecture, `docs/03_data_dictionary.md` for the dataset itself, then `sql/README.md` and `etl/README.md` for the warehouse and pipeline, then `powerbi/README.md` for the dashboard layer — the project is designed to read like a real BI delivery, from requirements to published dashboard.
+Read in this order for the full story, from requirements to published dashboard:
+
+1. `docs/01_business_scenario.md` — the "why": a stakeholder-style business problem and requirements
+2. `docs/02_data_model.md` — the star schema design (Mermaid ERD)
+3. `docs/03_data_dictionary.md` — the dataset itself
+4. `sql/README.md` — the data warehouse and 15 practice SQL queries
+5. `etl/README.md` — the ETL pipeline, data quality rules, and quarantine system
+6. `powerbi/README.md` — the semantic model, DAX measures, and dashboard designs
+7. `automation/README.md` — scheduled refresh and KPI alerting
+8. `docs/04_data_lineage.md` — how every number traces back to its source
+9. `docs/05_publishing_and_linkedin.md` — the project write-up
+
+## Reproducing this project end to end
+
+```bash
+# 1. Generate the synthetic source data
+cd data && python3 generate_data.py && cd ..
+
+# 2. Build and validate the SQL warehouse
+cd sql && python3 load_warehouse.py && cd ..
+
+# 3. Run the full ETL pipeline (extract -> validate -> transform -> load)
+cd etl
+python3 generate_raw_extracts.py
+python3 etl_pipeline.py
+cd ..
+
+# 4. Run a KPI threshold check against the loaded warehouse
+cd automation && python3 kpi_alert_check.py --db ../etl/gulf_shield_etl.db && cd ..
+
+# 5. Open Power BI Desktop and follow powerbi/01_data_model_setup.md
+#    and powerbi/02_dashboard_design.md to build the model and dashboards
+```
+
+Every stage is independently reproducible and seeded, so results are identical on any machine that runs this.
