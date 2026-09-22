@@ -31,8 +31,8 @@ This repo was built stage-by-stage to practice, in order, every core competency 
 - [x] **Stage 3 — SQL Data Warehouse**: DDL + load scripts + 15 practice queries (joins, CTEs, window functions)
 - [x] **Stage 4 — ETL Pipeline**: extract/validate/transform/load workflow with logging, quarantine, and data lineage
 - [x] **Stage 5 — Power BI Data Model**: star schema import + full DAX measure library
-- [ ] **Stage 6 — Power BI Dashboards**: Executive / Claims Ops / Customer Analytics
-- [ ] **Stage 7 — Automation**: scheduled refresh + alert logic
+- [x] **Stage 6 — Power BI Dashboards**: Executive / Claims Ops / Customer Analytics — design blueprint + visualization standards (hands-on Power BI build still pending)
+- [x] **Stage 7 — Automation**: scheduled refresh + alert setup guide, plus a tested Python KPI alert script
 - [ ] **Stage 8 — Documentation & Publishing**: data dictionary, lineage, case study
 
 ## Repo structure (grows each stage)
@@ -59,9 +59,15 @@ insurance-bi-portfolio/
 │   ├── quarantine/
 │   ├── logs/
 │   └── README.md
-└── powerbi/           # Stage 5-6: data model setup, DAX measures, dashboards
-    ├── 01_data_model_setup.md
-    ├── dax_measures.md
+├── powerbi/           # Stage 5-6: data model setup, DAX measures, dashboards
+│   ├── 01_data_model_setup.md
+│   ├── 02_dashboard_design.md
+│   ├── 03_visualization_standards.md
+│   ├── dax_measures.md
+│   └── README.md
+└── automation/        # Stage 7: scheduled refresh + KPI alert script
+    ├── scheduled_refresh_setup.md
+    ├── kpi_alert_check.py
     └── README.md
 ```
 
